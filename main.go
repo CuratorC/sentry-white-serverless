@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/aliyun/fc-runtime-go-sdk/fc"
-	"github.com/aliyun/fc-runtime-go-sdk/fccontext"
 	"io"
 	"io/ioutil"
 	"net/http"
@@ -17,11 +16,13 @@ func main() {
 
 // HandleHttpRequest ...
 func HandleHttpRequest(ctx context.Context, w http.ResponseWriter, req *http.Request) error {
-	lc, _ := fccontext.FromContext(ctx)
-	fmt.Printf("context: %#v\n", lc)
-	fmt.Printf("req.Headers: %#v\n", req.Header)
-	fmt.Printf("req.URL: %#v\n", req.URL.String())
-	io.WriteString(w, " 你好，测试!\n")
+	fmt.Println(req.Body)
+	s := "body: "
+	_, err := io.WriteString(w, s)
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
 
