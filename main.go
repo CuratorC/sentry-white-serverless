@@ -15,10 +15,10 @@ import (
 
 // 阿里云 账号及OSS设置
 
-const AliyunAccess = "LTAI5tFPDJNHMdBvn6dSPEC8"
-const AliyunAccessSecret = "U1LYgMNuZC8uACemDDDrPxnbnViNmC"
+const AliyunAccess = ""
+const AliyunAccessSecret = ""
 const OSSEndpoint = "https://oss-cn-hangzhou.aliyuncs.com"
-const OSSBucket = "sentry-white-api"
+const OSSBucket = ""
 
 // ApiPrefix api前缀
 const ApiPrefix = "api/v1/"
